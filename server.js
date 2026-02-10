@@ -21,7 +21,7 @@ const contactRoute = require ("./route/contactRoute")
 const corsOptions = {
      origin:"*",
      Credentials:true,
-    optionSuccessStatus:200 
+    optionSuccessStatus:200  
 }
 app.use(express.json())
 app.use(bodyParser.json())
