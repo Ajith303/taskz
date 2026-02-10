@@ -8,15 +8,15 @@ const yaml = require("yamljs")
 const swaggerUI = require("swagger-ui-express")
 const swaggerJsDocs = yaml.load("./yaml/api.yaml")
 
-const AuthMiddleWare = require ("../backend/MiddleWare/AuthMiddlleWare")
+const AuthMiddleWare = require ("./MiddleWare/AuthMiddlleWare")
 const cors = require ("cors")
 require('dotenv').config();
 const port = process.env.PORT
 console.log(port)
 
-const userRoute = require ("../backend/route/userRoute")
-const productRoute = require("../backend/route/productRoute")
-const contactRoute = require ("../backend/route/contactRoute")
+const userRoute = require ("./route/userRoute")
+const productRoute = require("./route/productRoute")
+const contactRoute = require ("./route/contactRoute")
 
 const corsOptions = {
      origin:"*",
