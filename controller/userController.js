@@ -30,11 +30,17 @@ userController.userLogin = async (req)=>{
     catch(err){
         return {code:500,status:false,message:err?err.message:"internal server error"}
     }
-
+    
 }
 userController.createUser = async (req)=>{
     try{
         let body = req.body
+        if(!body.email){
+            return {code:400,status:false,message:"email is required"}
+        }
+        if(!body.password){
+            return {code:400,status:false,message:"password is required"}
+        }
         let salt = await bcrypt.genSalt()
         let hashPassword = await bcrypt.hash (body.password,salt) 
         body["password"]=hashPassword
